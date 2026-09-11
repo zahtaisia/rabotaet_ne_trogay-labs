@@ -1,2 +1,45 @@
 # rabotaet_ne_trogay-labs
 кодю как могу
+
+# Лабораторная работа 1
+## Задание 1
+
+![Входные данные: 
+Имя: Алиса
+Возраст: 19](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex01.png)
+
+## Задание 2
+
+![Входные данные:
+Первое число: 3,5
+Второе число: 4.25](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex02.png)
+
+## Задание 3
+
+![Входные данные:
+price=1000, discount=10, vat=20](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex03.png)
+
+## Задание 4
+
+![Входные данные:
+Минуты: 135](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex04.png)
+
+## Задание 5
+
+![Входные данные:
+ФИО:   Иванов   Иван   Иванович](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex05.png)
+
+## Задание 6
+
+![Входные данные:
+3
+Максимов Максим 18 True
+Геннадьев Геннадий 17 False
+Алексеев Алексей 17 True](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex06.png)
+
+## Задание 7
+
+![Входные данные:
+thisisabracadabraHt1eadljjl12ojh.](/Users/tostorik/labs/rabotaet_ne_trogay-labs/lab_01/img/ex07.png)
+
+
