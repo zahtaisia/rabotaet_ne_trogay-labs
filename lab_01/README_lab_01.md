@@ -8,6 +8,7 @@
 #### Имя: Алиса
 #### Возраст: 19
 ![](img/img_/lab_01/ex01.png)
+<img width="1098" height="242" alt="image" src="https://github.com/user-attachments/assets/87ffcf58-3b9d-4a9a-a33f-37dfde3ede7d" />
 
 ## Задание 2
 
