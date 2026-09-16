@@ -1,8 +1,8 @@
-n = int(input())
+n = int(input('Введите число:'))
 och = 0
 zaoch = 0
 for i in range(n):
-    vv_date = str(input())
+    vv_date = str(input('Введите данные:'))
     fa, im, v, form = vv_date.split()
     v = float(v)
     if form == 'True':
