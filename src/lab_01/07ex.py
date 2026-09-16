@@ -1,19 +1,19 @@
-f = open('lab_01/src/07ex.txt').readline()
+strk = input('Введите строку:')
 frst = None
 scnd = None
 
-for i in range(len(f)):
-    if frst is None and f[i].isupper():
+for i in range(len(strk)):
+    if frst is None and strk[i].isupper():
         frst = i
-    if scnd is None and f[i].isdigit():
+    if scnd is None and strk[i].isdigit():
         scnd = i + 1
         break
     
 s = scnd - frst
 i = frst
 slovo = ''
-while i < len(f) and f[i] != '.':
-    slovo += f[i]
+while i < len(strk) and strk[i] != '.':
+    slovo += strk[i]
     i += s
     
         
