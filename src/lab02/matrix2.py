@@ -1,14 +1,15 @@
 import ast
 
-r = input("Введите матрицу: ")
-mat = ast.literal_eval(r)
+raw = input("Введите матрицу: ")
+mat = ast.literal_eval(raw)
 
-def r_sum(mat):
-    if mat and any(len(r) != len(mat[0]) for r in mat):
+def row_sums(mat):
+    if mat and any(len(row) != len(mat[0]) for row in mat):
         raise ValueError("рваная матрица")
-    return [sum(r) for r in mat]
+    return [sum(row) for row in mat]
 
 try:
-    print(r_sum(mat))
+    print(row_sums(mat))
 except ValueError as e:
-    print(f"ValueError: рваная матрица ")
+    print(f"ValueError: {e}")
+    
