@@ -60,7 +60,8 @@
 ### Входные данные:
 #### thisisabracadabraHt1eadljjl12ojh.
 ![](img/ex07.png)
-<img width="1392" height="156" alt="image" src="https://github.com/user-attachments/assets/428f8e13-eebe-4036-bdcf-a842dcf5845a" />
+<img width="1082" height="190" alt="image" src="https://github.com/user-attachments/assets/0ae1a79e-2c06-4776-b20c-7a06909495cd" />
+
 
 
 
