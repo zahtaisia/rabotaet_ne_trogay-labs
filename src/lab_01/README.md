@@ -8,7 +8,7 @@
 #### Имя: Алиса
 #### Возраст: 19
 
-![](/Users/tostorik/labs/rabotaet_ne_trogay-labs/img/lab01/ex01.png)
+![](./img/lab01/ex01.png)
 
 ## Задание 2
 
