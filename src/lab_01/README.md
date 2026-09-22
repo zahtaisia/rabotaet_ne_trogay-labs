@@ -9,38 +9,40 @@
 #### Возраст: 19
 
 ![](../../img/lab01/ex01.png)
+##### Рис.1 Иллюстрация работы программы(01_greeting)
 
 ## Задание 2
 
 ### Входные данные:
 #### Первое число: 3,5
 #### Второе число: 4.25 
-![](img/ex02.png)
-<img width="1098" height="242" alt="image" src="https://github.com/user-attachments/assets/ab0bd95c-f646-466a-b69e-be9370dc4dd3" />
 
+![](../../img/lab01/ex02.png)
+##### Рис.2 Иллюстрация работы программы(02_sum_avg)
 
 ## Задание 3
 
 ### Входные данные:
 #### price=1000, discount=10, vat=20
-![](img/ex03.png)
-<img width="1098" height="320" alt="image" src="https://github.com/user-attachments/assets/c06f0f81-77d5-405f-b169-0dabd09ee832" />
 
+![](../../img/lab01/ex03.png)
+##### Рис.3 Иллюстрация работы программы(03_discount_vat)
 
 ## Задание 4
 
 #### Входные данные:
 #### Минуты: 135
-![](img/ex04.png)
-<img width="1098" height="228" alt="image" src="https://github.com/user-attachments/assets/e9885d97-923c-4c6a-9b35-395eb042d366" />
 
+![](../../img/lab01/ex04.png)
+##### Рис.4 Иллюстрация работы программы(04_minutes_to_hhmm)
 
 ## Задание 5
 
 ### Входные данные:
 #### ФИО:   Иванов   Иван   Иванович
-![](img/ex05.png)
-<img width="1098" height="268" alt="image" src="https://github.com/user-attachments/assets/cc9e58d2-dc35-42f2-b955-d675fee329ad" />
+
+![](../../img/lab01/ex05.png)
+##### Рис.5 Иллюстрация работы программы(05_initials_and_len)
 
 
 ## Задание 6
@@ -50,8 +52,9 @@
 #### Максимов Максим 18 True
 #### Геннадьев Геннадий 17 False
 #### Алексеев Алексей 17 True
-![](img/ex06.png)
-<img width="1560" height="338" alt="image" src="https://github.com/user-attachments/assets/b3863711-d200-47e8-a7f4-86e720f6a7b9" />
+
+![](../../img/lab01/ex06.png)
+##### Рис.6 Иллюстрация работы программы(06ex)
 
 
 
@@ -59,8 +62,9 @@
 
 ### Входные данные:
 #### thisisabracadabraHt1eadljjl12ojh.
-![](img/ex07.png)
-<img width="1082" height="190" alt="image" src="https://github.com/user-attachments/assets/0ae1a79e-2c06-4776-b20c-7a06909495cd" />
+
+![](../../img/lab01/ex07.png)
+##### Рис.7 Иллюстрация работы программы(07ex)
 
 
 
