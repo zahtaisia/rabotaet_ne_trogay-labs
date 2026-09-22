@@ -51,7 +51,8 @@
 #### Геннадьев Геннадий 17 False
 #### Алексеев Алексей 17 True
 ![](img/ex06.png)
-https://github.com/zahtaisia/rabotaet_ne_trogay-labs/blob/main/img/lab01/ex06.png
+<img width="1560" height="338" alt="image" src="https://github.com/user-attachments/assets/b3863711-d200-47e8-a7f4-86e720f6a7b9" />
+
 
 
 ## Задание 7
