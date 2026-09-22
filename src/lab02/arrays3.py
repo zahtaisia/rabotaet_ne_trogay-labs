@@ -14,6 +14,6 @@ def flatten(mat):
 try:
     print(flatten(mat))
 except TypeError as e:
-    print(f"TypeError: {e}")
+    print(f"TypeError: строка не строка строк матрицы")
     
 
