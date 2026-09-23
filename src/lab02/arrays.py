@@ -68,7 +68,7 @@ def flatten(mat: list[list | tuple]) -> list:
         pr = []
         for row in mat:
             if type(row) != list and type(row) != tuple:
-                raise TypeError ('Передан не тот тип')
+                raise TypeError ('строка не является строкой строк матрицы')
             pr.extend(row)
         return pr
     
@@ -81,11 +81,11 @@ min_max
 {min_max([42])}
 {min_max([-5, -2, -9])}
 {min_max([1.5, 2, 2.0, -3.1])}
-''')"""
+''')
 # Тест кейс который выводит ошибку ValueError
 # print(f'{min_max([])}')
 
-"""print(f'''
+print(f'''
 unique_sorted
 
 {unique_sorted([3, 1, 2, 1, 3])}
