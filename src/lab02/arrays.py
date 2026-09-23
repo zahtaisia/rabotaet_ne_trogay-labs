@@ -74,33 +74,33 @@ def flatten(mat: list[list | tuple]) -> list:
     
     
 print('Тест кейсы:')
-print(f'''
+"""print(f'''
 min_max
 
 {min_max([3, -1, 5, 5, 0])}
 {min_max([42])}
 {min_max([-5, -2, -9])}
 {min_max([1.5, 2, 2.0, -3.1])}
-''')
+''')"""
 # Тест кейс который выводит ошибку ValueError
 # print(f'{min_max([])}')
 
-print(f'''
+"""print(f'''
 unique_sorted
 
 {unique_sorted([3, 1, 2, 1, 3])}
 {unique_sorted([])}
 {unique_sorted([-1, -1, 0, 2, 2])}
 {unique_sorted([1.0, 1, 2.5, 2.5, 0])}
-''')
+''')"""
 
-print(f'''
+"""print(f'''
 flatten
 
 {flatten([[1, 2], [3, 4]])}
 {flatten([[1, 2], (3, 4, 5)])}
 {flatten([[1], [], [2, 3]])}
-''')
+''')"""
 
 # Тест кейс который выводит ошибку TypeError
-# print(f'{flatten([[1, 2], "ab"])}') 
+print(f'{flatten([[1, 2], "ab"])}') 

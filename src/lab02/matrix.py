@@ -49,7 +49,7 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
 
 
 print('Тест кейсы:')
-print(f'''
+"""print(f'''
 transpose
 
 {transpose([[1, 2, 3]])}
@@ -68,19 +68,19 @@ row_sums
 {row_sums([[1, 2, 3], [4, 5, 6]])}
 {row_sums([[-1, 1], [10, -10]])}
 {row_sums([[0, 0], [0, 0]])}
-''')
+''')"""
 
 # Возвращает ошибку ValueError
 # print(f'{row_sums([[1, 2], [3]])}')
 
 
-print(f'''
+"""print(f'''
 col_sums
 
 {col_sums([[1, 2, 3], [4, 5, 6]])}
 {col_sums([[-1, 1], [10, -10]])}
 {col_sums([[0, 0], [0, 0]])}
-''')
+''')"""
 
 # Возвращает ошибку ValueError
-# print(f'{col_sums([[1, 2], [3]])}')
+print(f'{col_sums([[1, 2], [3]])}')
