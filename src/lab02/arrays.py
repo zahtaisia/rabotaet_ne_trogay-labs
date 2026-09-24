@@ -74,7 +74,7 @@ def flatten(mat: list[list | tuple]) -> list:
     
     
 print('Тест кейсы:')
-print(f'''
+"""print(f'''
 min_max
 
 {min_max([3, -1, 5, 5, 0])}
@@ -100,7 +100,7 @@ flatten
 {flatten([[1, 2], [3, 4]])}
 {flatten([[1, 2], (3, 4, 5)])}
 {flatten([[1], [], [2, 3]])}
-''')
+''')"""
 
 # Тест кейс который выводит ошибку TypeError
-#print(f'{flatten([[1, 2], "ab"])}') 
+print(f'{flatten([[1, 2], "ab"])}') 
