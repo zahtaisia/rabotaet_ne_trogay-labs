@@ -5,7 +5,7 @@ scnd = None
 for i in range(len(strk)):
     if frst is None and strk[i].isupper():
         frst = i
-    if scnd is None and strk[i].isdigit():
+    if scnd is None and frst and strk[i].isdigit():
         scnd = i + 1
         break
     
