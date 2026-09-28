@@ -34,11 +34,12 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     Returns:
         list[float | int]: Отсортированный по возрастанию список
             уникальных значений из nums."""
+    nums = nums.copy()          #
     ans = []
     while len(nums) > 0:
         mn = nums[0]
         for n in nums:
-            if n < mn and n not in ans:
+            if n < mn:
                 mn = n
         ans.append(mn)
         while mn in nums:
