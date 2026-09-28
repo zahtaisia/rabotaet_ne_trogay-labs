@@ -1,4 +1,4 @@
-name = input('Добавь свое имя:')
-vos = input('Добавь свой возраст:')
+name = input('Имя: ')
+vos = input('Возраст: ')
 now = int(vos) + 1
-print(f'Привет, {name}! Через год тебе будет {now} .')
+print(f'Привет, {name}! Через год тебе будет {now}.')

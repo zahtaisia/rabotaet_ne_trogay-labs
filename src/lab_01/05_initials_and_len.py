@@ -8,4 +8,4 @@ for i in range(len(fio)-1):
             
 print(f"ФИО: {fio}")
 print(f'Инициалы: {inic.upper()}.')
-print(f'Длина: {dl}')
+print(f'Длина (символов): {dl}')

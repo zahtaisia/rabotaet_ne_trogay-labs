@@ -55,6 +55,6 @@ format_record
 #print(format_record((" Иванов Ив42 Ив67ович ", "ABB-01", 3.999)))
 
 #--------------------TypeError
-print(format_record(("Магомед Магомедов ", "ABB-01", "3.999")))
+#print(format_record(("Магомед Магомедов ", "ABB-01", "3.999")))
 #print(format_record((["Ойякиви Сергей Александрович"], "BIVT-26-6-1", 3.999)))
 #print(format_record(("Люблюмаму Оченьсильно", ["BIVT-26-6-1"], 3.999)))
