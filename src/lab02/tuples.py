@@ -30,6 +30,8 @@ def format_record(rec: tuple[str, str, float]) -> str:
         raise ValueError("ФИО должно состоять из 2 или 3 слов")
     if any(not part.isalpha() for part in parts):
         raise ValueError("ФИО должно состоять только из букв")
+    if not 0.0 <= gpa <= 5.0:
+        raise ValueError('Неверная длина GPA')
 
     group = " ".join(group.split())
     if not group:
@@ -41,18 +43,19 @@ def format_record(rec: tuple[str, str, float]) -> str:
     return f"{surname} {initials}, гр. {group}, GPA {gpa:.2f}"
 
 print('Тест кейсы:')
-print(f'''
+"""print(f'''
 format_record
 {format_record(("Иванов Иван Иванович", "BIVT-25", 4.6))}
 {format_record(("Петров Пётр", "IKBO-12", 5.0))}
 {format_record(("Петров Пётр Петрович", "IKBO-12", 5.0))}
 {format_record((" сидорова анна сергеевна ", "ABB-01", 3.999))}
-''')
+''')"""
 #--------------------ValueError
 #print(format_record(("  ", "ABB-01", 3.999)))
 #print(format_record((" Анна ", "ABB-01", 3.999)))
 #print(format_record((" сидорова анна сергеевна ", "", 3.999)))
 #print(format_record((" Иванов Ив42 Ив67ович ", "ABB-01", 3.999)))
+print(format_record(("Владимир Владимирович", "ABB-01", 6.00)))
 
 #--------------------TypeError
 #print(format_record(("Магомед Магомедов ", "ABB-01", "3.999")))
