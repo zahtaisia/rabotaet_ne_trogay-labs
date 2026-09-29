@@ -13,11 +13,12 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     
     
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    nums = nums.copy()          
     ans = []
     while len(nums) > 0:
         mn = nums[0]
         for n in nums:
-            if n < mn and n not in ans:
+            if n < mn:
                 mn = n
         ans.append(mn)
         while mn in nums:
