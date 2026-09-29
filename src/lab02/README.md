@@ -111,16 +111,16 @@
 ![](../../images/lab02/img16.png)
 ##### Рис.16 Иллюстрация работы программы(tuples), функции format_record
 #### ("Владимир Владимирович", "ABB-01", 6.00) -> ValueError: Неверная длина GPA
-![](../../images/lab02/img20.png)
+![](../../images/lab02/img17.png)
 ##### Рис.17 Иллюстрация работы программы(tuples), функции format_record
 ### Входные данные и результат:
 #### TypeError
 #### ("Магомед Магомедов ", "ABB-01", "3.999") -> TypeError: gpa должен быть числом (int или float)
-![](../../images/lab02/img17.png)
+![](../../images/lab02/img18.png)
 ##### Рис.18 Иллюстрация работы программы(tuples), функции format_record
 #### (["Ойякиви Сергей Александрович"], "BIVT-26-6-1", 3.999) -> TypeError: fio должно быть строкой
-![](../../images/lab02/img18.png)
+![](../../images/lab02/img19.png)
 ##### Рис.19 Иллюстрация работы программы(tuples), функции format_record
 #### ("Люблюмаму Оченьсильно", ["BIVT-26-6-1"], 3.999) -> TypeError: group должна быть строкой
-![](../../images/lab02/img19.png)
+![](../../images/lab02/img20.png)
 ##### Рис.20 Иллюстрация работы программы(tuples), функции format_record
