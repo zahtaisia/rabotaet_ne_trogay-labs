@@ -1,4 +1,4 @@
-fio = input('Введите ФИО: ')
+fio = input('ФИО: ')
 dl = len(fio.replace(' ', '')) + 2
 inic = fio[0]
 for i in range(len(fio)-1):
@@ -6,6 +6,5 @@ for i in range(len(fio)-1):
         if fio[i+1]!= ' ':
             inic+= fio[i+1]
             
-print(f"ФИО: {fio}")
 print(f'Инициалы: {inic.upper()}.')
 print(f'Длина (символов): {dl}')
