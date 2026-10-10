@@ -1,1 +1,3 @@
 __pycache__/
+*.pyc
+src/lab04/test_A.py
