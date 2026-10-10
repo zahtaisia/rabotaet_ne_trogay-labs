@@ -32,6 +32,7 @@ python3 -c "from src.lab04.io_txt_csv import read_text; print(repr(read_text('da
 Ожидаемый результат: `''`
 ![](../../images/lab04/img02.png)
 Рис. 2 read_text для пустого файла возвращает пустую строку
+
 **2. `write_csv` с пустым `rows` и `header=None` → пустой файл**
 ```
 python3 -c "from src.lab04.io_txt_csv import write_csv; write_csv([], 'data/lab04/empty.csv')"
@@ -39,6 +40,7 @@ ls -l data/lab04/empty.csv
 ```
 ![](../../images/lab04/img03.png)
 Рис.3 Пустой rows без заголовка: файл создан, размер 0 байт
+
 **3. `write_csv` с пустым `rows` и `header=("a","b")` → только заголовок**
 ```
 python3 -c "from src.lab04.io_txt_csv import write_csv; write_csv([], 'data/lab04/header_only.csv', header=('a','b'))"
@@ -47,6 +49,7 @@ cat data/lab04/header_only.csv
 Ожидаемый результат: `a,b`
 ![](../../images/lab04/img04.png)
 Рис.4 Пустой rows с заголовком: в файле только строка a,b
+
 **4. Строки разной длины → `ValueError`**
 ```
 python3 -c "from src.lab04.io_txt_csv import write_csv; write_csv([(1,2),(3,)], 'data/lab04/bad.csv')"
@@ -54,6 +57,7 @@ python3 -c "from src.lab04.io_txt_csv import write_csv; write_csv([(1,2),(3,)], 
 Ожидаемый результат: ошибка `ValueError: Все строки (и заголовок) должны быть одинаковой длины`.
 ![](../../images/lab04/img05.png)
 Рис.5 Строки разной длины вызывают ValueError
+
 **5. Очень большой файл**
 
 Файл читается целиком, это допустимо по ТЗ. В реальных задачах большие файлы
