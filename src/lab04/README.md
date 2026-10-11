@@ -3,22 +3,20 @@
 ## Задание A
 
 Результат работы:
-1. Выполняется кодировка по умолчанию UTF-8, другую передают параметром encoding, например cp1251.
+1. Кодировка по умолчанию UTF-8, другую передают параметром encoding, например cp1251.
 2. Ошибки FileNotFoundError и UnicodeDecodeError не перехватываются.
 3. Файл читается целиком. В реальных задачах большие файлы стоит читать построчно.
 4. Описание краевых случаев (пустой файл, пустой rows, только заголовок).
 
-Ручной мини-тест `io_txt_csv.py` для README:
-Запуск из корня репозитория:
+Ручной мини-тест (из корня репозитория):
+
 ```
-python3 -m src.lab04.test_A
+python3 -c "from src.lab04.io_txt_csv import read_text; print(read_text('data/lab04/input.txt'))"
+python3 -c "from src.lab04.io_txt_csv import write_csv; write_csv([('word','count'),('test',3)], 'data/lab04/check.csv')"
 ```
-```python 
-from src.io_txt_csv import read_text, write_csv
-txt = read_text("data/input.txt")  # должен вернуть строку
-write_csv([("word","count"),("test",3)], "data/check.csv")  # создаст CSV
-```
-Скрипт читает `data/lab04/input.txt` и создаёт `data/lab04/check.csv`.
+
+Первая команда читает `data/lab04/input.txt`, вторая создаёт `data/lab04/check.csv`.
+
 
 ![Запуск мини-теста](../../images/lab04/img01.png)
 Рис.1 Запуск мини-теста
@@ -79,11 +77,14 @@ python3 src/lab04/text_report.py --in data/lab04/input.txt --encoding cp1251
 
 ### Параметры командной строки
 
-| Параметр     | По умолчанию            | Описание                          |
-|--------------|-------------------------|-----------------------------------|
-| `--in`       | `data/lab04/input.txt`  | входной текстовый файл            |
-| `--out`      | `data/lab04/report.csv` | выходной CSV                      |
-| `--encoding` | `utf-8`                 | кодировка входного файла          |
+| Параметр     | По умолчанию            | Описание                                          |
+|--------------|-------------------------|---------------------------------------------------|
+| `--in`       | `data/lab04/input.txt`  | один или несколько входных файлов                 |
+| `--out`      | `data/lab04/report.csv` | CSV `word,count` по всем файлам вместе            |
+| `--encoding` | `utf-8`                 | кодировка входных файлов                          |
+| `--per-file` | не задан                | ★ CSV `file,word,count` по каждому файлу          |
+| `--total`    | не задан                | ★ ещё один сводный CSV `word,count`               |
+| `--table`    | выключен                | ★ вывести таблицу в консоль                       |
 
 ### Формат отчёта
 
@@ -96,6 +97,7 @@ python3 src/lab04/text_report.py --in data/lab04/input.txt --encoding cp1251
 
 - **Файл не найден:** скрипт печатает сообщение `Ошибка: файл не найден: <путь>`
   и завершается через `sys.exit(1)`.
+  ![](../../images/lab04/filenotfound.png)
 - **Пустой вход:** в `report.csv` записывается только заголовок `word,count`.
 - **Нестандартная кодировка:** кодировка передаётся параметром `--encoding`,
   например `--encoding cp1251`. Если файл в cp1251 прочитать как utf-8,
@@ -179,6 +181,25 @@ cat data/lab04/report_total.csv
 ```
 
 `report_per_file.csv` (`file,word,count`) содержит частоты по каждому файлу, `report_total.csv` (`word,count`) сводку по всем файлам. Флаг `--table` печатает таблицу в консоль с шириной столбцов по максимуму.
+
+`report_per_file.csv`:
+
+```
+file,word,count
+a.txt,мир,1
+a.txt,привет,1
+b.txt,привет,2
+```
+
+`report_total.csv`:
+
+```
+word,count
+привет,3
+мир,1
+```
+
+При равных `count` слова сортируются по алфавиту, поэтому в `a.txt` «мир» стоит перед «привет». Это следует правилу сортировки из ТЗ, хотя в примере ТЗ порядок другой.
 
 ![](../../images/lab04/img10.png)
 ![](../../images/lab04/img11.png)
