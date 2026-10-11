@@ -109,6 +109,7 @@ python3 src/lab04/text_report.py --in data/lab04/input.txt --encoding cp1251
 
 ```
 python3 src/lab04/text_report.py
+cat data/lab04/report.csv
 ```
 
 Консоль:
@@ -128,7 +129,7 @@ word,count
 привет,2
 мир,1
 ```
-
+![](../../images/lab04/img06.png)
 Рис. 6. Тест-кейс A: запуск базовой версии
 
 
@@ -143,7 +144,8 @@ cat data/lab04/report_empty.csv
 
 Результат: в консоли `Всего слов: 0`, `Уникальных слов: 0`, пустой топ-5. В CSV только заголовок `word,count`.
 
-Рис. 7. Тест-кейс B: пустой файл, в отчёте только заголовок</em>
+![](../../images/lab04/img07.png)
+Рис. 7. Тест-кейс B: пустой файл, в отчёте только заголовок
 
 
 #### C. Кодировка cp1251
@@ -157,8 +159,27 @@ cat data/lab04/report_cp1251.csv
 
 Результат: в CSV `привет,1`.
 
+![](../../images/lab04/img08.png)
 Рис. 8. Тест-кейс C: чтение файла в cp1251 с параметром --encoding
 
 Тот же файл без `--encoding cp1251` вызывает `UnicodeDecodeError`:
+```python
+python3 src/lab04/text_report.py --in data/lab04/input_cp1251.txt --out data/lab04/report_cp1251.csv
+```
 
+![](../../images/lab04/img09.png)
 Рис. 9. Без указания кодировки файл cp1251 не читается как utf-8
+
+### Несколько файлов и таблица
+
+```
+python3 src/lab04/text_report.py --in data/lab04/a.txt data/lab04/b.txt --per-file data/lab04/report_per_file.csv --total data/lab04/report_total.csv --table
+cat data/lab04/report_per_file.csv
+cat data/lab04/report_total.csv
+```
+
+`report_per_file.csv` (`file,word,count`) содержит частоты по каждому файлу, `report_total.csv` (`word,count`) сводку по всем файлам. Флаг `--table` печатает таблицу в консоль с шириной столбцов по максимуму.
+
+![](../../images/lab04/img10.png)
+![](../../images/lab04/img11.png)
+Рис. 10 и 11. Тест D: несколько файлов, отчёты и таблица
