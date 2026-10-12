@@ -1,5 +1,4 @@
 """Ввод/вывод для ЛР4: чтение текста и запись CSV."""
-from __future__ import annotations
 
 import csv
 from pathlib import Path
@@ -52,9 +51,9 @@ def write_csv(
     if len(lengths) > 1:
         raise ValueError("Все строки (и заголовок) должны быть одинаковой длины")
 
-    ensure_parent_dir(path)
+    ensure_parent_dir(path) #создали заранее чтобы не упасть
     with Path(path).open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if header is not None:
-            w.writerow(header)
-        w.writerows(rows)
+            w.writerow(header) #пишем одной строкой
+        w.writerows(rows) #пишем все строки разом

@@ -7,18 +7,17 @@
         --per-file data/lab04/report_per_file.csv --total data/lab04/report_total.csv
     python3 src/lab04/text_report.py --table
 """
-from __future__ import annotations
 
-import argparse
-import sys
+import argparse #читает параметры из командной строки
+import sys #даёт доступ к системным вещам: список путей поиска модулей и exit
 from collections import Counter
 from pathlib import Path
 
 # добавляем корень репозитория в пути поиска модулей
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from src.lab04.io_txt_csv import read_text, write_csv  # noqa: E402
-from src.lib.text import normalize, tokenize  # noqa: E402  (из ЛР3)
+from src.lab04.io_txt_csv import read_text, write_csv  # noqa: E402 #просит редактор не ругаться, что импорты не в самом верху
+from src.lib.text import normalize, tokenize, count_freq  # noqa: E402  (из ЛР3)
 
 
 def frequencies_from_text(text: str) -> dict[str, int]:
@@ -30,7 +29,7 @@ def frequencies_from_text(text: str) -> dict[str, int]:
     Returns:
         Словарь {слово: количество}. Для пустого текста он пустой.
     """
-    return Counter(tokenize(normalize(text)))
+    return count_freq(tokenize(normalize(text)))
 
 
 def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
@@ -77,9 +76,9 @@ def main() -> None:
         - файл не найден: сообщение об ошибке и выход с кодом 1;
         - пустой вход: в CSV только заголовок.
     """
-    parser = argparse.ArgumentParser(description="Отчёт по частотам слов")
+    parser = argparse.ArgumentParser(description="Отчёт по частотам слов")#создает парсер
     parser.add_argument("--in", dest="inputs", nargs="+", default=["data/lab04/input.txt"],
-                        help="входные файлы (по умолчанию data/lab04/input.txt)")
+                        help="входные файлы (по умолчанию data/lab04/input.txt)")#описывает правила для парсера
     parser.add_argument("--out", default="data/lab04/report.csv",
                         help="выходной CSV (по умолчанию data/lab04/report.csv)")
     parser.add_argument("--encoding", default="utf-8",
@@ -87,7 +86,7 @@ def main() -> None:
     parser.add_argument("--per-file", default=None, help="CSV file,word,count (★)")
     parser.add_argument("--total", default=None, help="сводный CSV word,count (★)")
     parser.add_argument("--table", action="store_true", help="вывести таблицу в консоль (★)")
-    args = parser.parse_args()
+    args = parser.parse_args()#разбирает аргументы командной строки и возвращает объект с полями, соответствующими аргументам
 
     per_file: dict[str, dict[str, int]] = {}
     total: Counter = Counter()
@@ -109,8 +108,8 @@ def main() -> None:
     if args.per_file:
         per_file_rows = [
             (name, word, count)
-            for name in sorted(per_file)
-            for word, count in sorted_word_counts(per_file[name])
+            for name in sorted(per_file) # внешний цикл: по файлам
+            for word, count in sorted_word_counts(per_file[name]) # внутренний цикл: по словам файла
         ]
         write_csv(per_file_rows, args.per_file, header=("file", "word", "count"))
 
