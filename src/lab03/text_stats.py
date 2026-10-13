@@ -2,6 +2,8 @@ from src.lib.text import normalize, tokenize, count_freq, top_n
 import os
 
 TABLE_MODE = os.getenv("TABLE_MODE", "0") == "1"
+#TABLE_MODE=1 python3 -m src.lab03.text_stats запуск таблицы 
+#TABLE_MODE=0 python3 -m src.lab03.text_stats запуск обычного вывода
 '''Порядок работы:
         1. Читает одну строку через ``input()``.
         2. Нормализует текст, разбивает на слова и считает частоты.
