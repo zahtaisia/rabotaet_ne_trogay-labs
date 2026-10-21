@@ -89,7 +89,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         with src.open(encoding="utf-8") as f:
             data = json.load(f)
     except json.JSONDecodeError as e:
-        raise ValueError(f"Некорректный JSON: {e}") from e
+        raise ValueError(f"Некорректный JSON: {e}") from None
 
     if not isinstance(data, list) or not data:
         raise ValueError("Пустой JSON или неподдерживаемая структура")
