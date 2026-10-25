@@ -1,6 +1,2 @@
 __pycache__/
-*.pyc
-src/lab04/test_A.py
-src/lab05/test_A.py
-src/lab05/test_B.py
-src/lab05/test.txt
+.venv/

@@ -1,0 +1,1 @@
+mkdir -p data/lab05/samples/bad && printf '[]' > data/lab05/samples/bad/empty.json && printf '[1, 2, 3]' > data/lab05/samples/bad/not_dicts.json && printf '{oops' > data/lab05/samples/bad/broken.json && printf '' > data/lab05/samples/bad/empty.csv && printf 'name,age\n' > data/lab05/samples/bad/header_only.csv
