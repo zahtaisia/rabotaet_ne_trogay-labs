@@ -148,7 +148,7 @@ python3 -c "from src.lab05.json_csv import csv_to_json; csv_to_json('data/lab05/
 CSV не найден (`FileNotFoundError`):
 
 ```bash
-python3 -c "from src.lab05.json_csv import csv_to_json; csv_to_json('data/lab05/samples/nope.csv', 'data/lab05/out/x.json')"
+python3 -c "from src.lab05.json_csv import csv_to_json; csv_to_json('data/lab05/samples/nope.csv' 'data/lab05/out/x.json')"
 ```
 
 ![](../../images/lab05/img16.png)
@@ -198,7 +198,7 @@ open data/lab05/out/people.xlsx
 ### ДО -> ПОСЛЕ
 
 ![](../../images/lab05/img19.png)  ![](../../images/lab05/img20.png)
-Рис.19 и Рис.20 Результат работы программы по преобразованию файла из CSV в XLSX (people.csv и cities.xlsx)
+Рис.19 и Рис.20 Результат работы программы по преобразованию файла из CSV в XLSX 
 
 ### Проверка ошибок
 
