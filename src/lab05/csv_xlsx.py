@@ -71,10 +71,10 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     wb.save(dst)
     
-    if __name__ == "__main__":
-        try:
-            csv_to_xlsx("data/lab05/samples/people.csv", "data/lab05/out/people.xlsx")
-            csv_to_xlsx("data/lab05/samples/cities.csv", "data/lab05/out/cities.xlsx")
-        except (FileNotFoundError, ValueError) as e:
-            print(f"Ошибка: {e}", file=sys.stderr)
-            sys.exit(1)
+if __name__ == "__main__":
+    try:
+        csv_to_xlsx("data/lab05/samples/people.csv", "data/lab05/out/people.xlsx")
+        csv_to_xlsx("data/lab05/samples/cities.csv", "data/lab05/out/cities.xlsx")
+    except (FileNotFoundError, ValueError) as e:
+        print(f"Ошибка: {e}", file=sys.stderr)
+        sys.exit(1)

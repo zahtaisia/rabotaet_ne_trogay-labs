@@ -161,10 +161,10 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with dst.open("w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
         
-    if __name__ == "__main__":
-        try:
-            json_to_csv("data/lab05/samples/people.json", "data/lab05/out/people_from_json.csv")
-            csv_to_json("data/lab05/samples/people.csv", "data/lab05/out/people_from_csv.json")
-        except (FileNotFoundError, ValueError) as e:
-            print(f"Ошибка: {e}", file=sys.stderr)
-            sys.exit(1)    
+if __name__ == "__main__":
+    try:
+        json_to_csv("data/lab05/samples/people.json", "data/lab05/out/people_from_json.csv")
+        csv_to_json("data/lab05/samples/people.csv", "data/lab05/out/people_from_csv.json")
+    except (FileNotFoundError, ValueError) as e:
+        print(f"Ошибка: {e}", file=sys.stderr)
+        sys.exit(1)    
