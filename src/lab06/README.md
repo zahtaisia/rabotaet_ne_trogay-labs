@@ -64,6 +64,21 @@ python3 -m src.lab06.cli_text stats --input data/lab05/samples/people.txt --top 
 ![](../../images/lab06/img05.png)
 Рис.5 Ошибка: --top должен быть числом
 
+### Справка по подкомандам
+
+```bash
+python3 -m src.lab06.cli_text cat --help
+```
+
+![](../../images/lab06/img11.png)
+Рис.11 Справка подкоманды cat
+
+```bash
+python3 -m src.lab06.cli_text stats --help
+```
+
+![](../../images/lab06/img12.png)
+Рис.12 Справка подкоманды stats
 ---
 
 ## Задание B — cli_convert.py
@@ -120,3 +135,43 @@ python3 -m src.lab06.cli_convert json2csv --in data/lab05/samples/people.csv --o
 
 ![](../../images/lab06/img10.png)
 Рис.10 Ошибка: вместо .json передан .csv
+
+Файл не найден:
+
+```bash
+python3 -m src.lab06.cli_convert csv2json --in data/lab05/samples/nope.csv --out data/lab05/out/x.json
+```
+
+![](../../images/lab06/img13.png)
+Рис.13 Ошибка: входной файл не существует
+
+### Справка по подкомандам
+
+```bash
+python3 -m src.lab06.cli_convert json2csv --help
+```
+
+![](../../images/lab06/img14.png)
+Рис.14 Справка подкоманды json2csv
+
+```bash
+python3 -m src.lab06.cli_convert csv2json --help
+```
+
+![](../../images/lab06/img15.png)
+Рис.15 Справка подкоманды csv2json
+
+```bash
+python3 -m src.lab06.cli_convert csv2xlsx --help
+```
+
+![](../../images/lab06/img16.png)
+Рис.16 Справка подкоманды csv2xlsx
+
+### ДО -> ПОСЛЕ
+
+![](../../images/lab06/img17.png) ![](../../images/lab06/img18.png)
+Рис.17 и Рис.18 Результат работы csv2json (исходный CSV и полученный JSON)
+
+![](../../images/lab06/img19.png)
+Рис.19 Файл people.xlsx, полученный через csv2xlsx
