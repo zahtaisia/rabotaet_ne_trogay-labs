@@ -71,14 +71,14 @@ python3 -m src.lab06.cli_text cat --help
 ```
 
 ![](../../images/lab06/img11.png)
-Рис.11 Справка подкоманды cat
+Рис.6 Справка подкоманды cat
 
 ```bash
 python3 -m src.lab06.cli_text stats --help
 ```
 
 ![](../../images/lab06/img12.png)
-Рис.12 Справка подкоманды stats
+Рис.7 Справка подкоманды stats
 ---
 
 ## Задание B — cli_convert.py
@@ -96,7 +96,7 @@ python3 -m src.lab06.cli_convert --help
 ```
 
 ![](../../images/lab06/img06.png)
-Рис.6 Справка cli_convert.py
+Рис.8 Справка cli_convert.py
 
 JSON -> CSV:
 
@@ -105,7 +105,7 @@ python3 -m src.lab06.cli_convert json2csv --in data/lab05/samples/people.json --
 ```
 
 ![](../../images/lab06/img07.png)
-Рис.7 Подкоманда json2csv
+Рис.9 Подкоманда json2csv
 
 CSV -> JSON:
 
@@ -114,7 +114,7 @@ python3 -m src.lab06.cli_convert csv2json --in data/lab05/samples/people.csv --o
 ```
 
 ![](../../images/lab06/img08.png)
-Рис.8 Подкоманда csv2json
+Рис.10 Подкоманда csv2json
 
 CSV -> XLSX:
 
@@ -123,7 +123,7 @@ python3 -m src.lab06.cli_convert csv2xlsx --in data/lab05/samples/people.csv --o
 ```
 
 ![](../../images/lab06/img09.png)
-Рис.9 Подкоманда csv2xlsx
+Рис.11 Подкоманда csv2xlsx
 
 ### Проверка ошибок
 
@@ -134,7 +134,7 @@ python3 -m src.lab06.cli_convert json2csv --in data/lab05/samples/people.csv --o
 ```
 
 ![](../../images/lab06/img10.png)
-Рис.10 Ошибка: вместо .json передан .csv
+Рис.12 Ошибка: вместо .json передан .csv
 
 Файл не найден:
 
