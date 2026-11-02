@@ -94,6 +94,9 @@ def main() -> None:
     except FileNotFoundError as e:
         print(f"Ошибка: {e}", file=sys.stderr)
         sys.exit(1)
+    except UnicodeDecodeError:
+        print(f"Ошибка: файл {args.input} не в кодировке UTF-8", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
