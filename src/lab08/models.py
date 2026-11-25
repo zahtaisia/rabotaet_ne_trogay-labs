@@ -2,6 +2,7 @@ from datetime import date
 
 STUDENT_FIELDS = ("fio", "birthdate", "group", "gpa")
 
+#вспомогательные функции проверки отдельных полей, вызываются внутри validate_student
 
 def _check_str(name, value):
     if not isinstance(value, str) or not value.strip():
@@ -28,6 +29,9 @@ def _check_gpa(value):
         raise ValueError(f"gpa: ожидается число, получено {value!r}")
     if not (0 <= value <= 5):
         raise ValueError(f"gpa: {value} вне диапазона 0..5")
+
+
+#основная функция проверки записи студента, вызывает вспомогательные функции для отдельных полей
 
 def validate_student(rec):
     if not isinstance(rec, dict):
@@ -91,8 +95,25 @@ def student_from_dict(d):
     # берём ровно нужные ключи; gpa приводится к float внутри make_student
     return make_student(d["fio"], d["birthdate"], d["group"], d["gpa"])
 
+
+#★ дополнительное задание
+
+def update_student(rec, **fields):
+    validate_student(rec)
+    unknown = [k for k in fields if k not in STUDENT_FIELDS]
+    if unknown:
+        raise KeyError(f"неизвестные поля: {unknown}")
+    new = dict(rec)            # копия: исходная запись не трогается
+    new.update(fields)
+    validate_student(new)      # неверное значение -> ValueError
+    new["gpa"] = float(new["gpa"])
+    return new
+
+
+#ручная проверка
+
 if __name__ == "__main__":
-    
+    # --- этап 1 ---
     print(make_student("Иванов Иван Иванович", "2007-05-14", "БИВТ-26-6-1", 4))
 
     for args in [
@@ -104,6 +125,7 @@ if __name__ == "__main__":
         except ValueError as e:
             print("ValueError:", e)
 
+    # --- этап 2 ---
     s = make_student("Иванов Иван Иванович", "2007-09-20", "БИВТ-26-6-1", 4.3)
     print(student_age(s, date(2026, 9, 19)))   # 18
     print(student_age(s, date(2026, 9, 20)))   # 19
@@ -111,3 +133,13 @@ if __name__ == "__main__":
     c = student_to_dict(s)
     print(c == s, c is s)                      # True False
     print(student_from_dict({"fio": "Петров Пётр", "birthdate": "2005-01-01", "group": "Б-1", "gpa": 5}))
+
+    # --- ★ update_student ---
+    s1 = make_student("Иванов Иван Иванович", "2007-05-14", "БИВТ-26-6-1", 4.3)
+    s2 = update_student(s1, gpa=4.8)
+    print(s1["gpa"], s2["gpa"], s1 is s2)      # 4.3 4.8 False
+    for kwargs in [{"email": "a@b.c"}, {"gpa": 9}]:
+        try:
+            update_student(s1, **kwargs)
+        except (KeyError, ValueError) as e:
+            print(type(e).__name__, e)

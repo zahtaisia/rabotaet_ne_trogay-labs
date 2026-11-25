@@ -1,7 +1,8 @@
+import csv
 import json
 from pathlib import Path
 
-from src.lab08.models import make_student, student_to_dict, student_from_dict
+from src.lab08.models import STUDENT_FIELDS, student_to_dict, student_from_dict
 
 
 def students_to_json(students, path):
@@ -41,6 +42,42 @@ def students_from_json(path, strict=True):
     return result
 
 
+#★ дополнительное задание
+
+def students_from_csv(path, strict=True):
+    """Читает CSV с заголовком fio,birthdate,group,gpa. Политика strict/skip как у JSON."""
+    with open(path, encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        if reader.fieldnames is None or set(reader.fieldnames) != set(STUDENT_FIELDS):
+            raise ValueError(
+                f"заголовок CSV должен быть {','.join(STUDENT_FIELDS)}, получено {reader.fieldnames}"
+            )
+
+        result = []
+        skipped = []
+        for number, row in enumerate(reader, start=1):   # номер строки данных, без заголовка
+            try:
+                row = dict(row)
+                # CSV хранит всё как текст: gpa приходит строкой, лечим здесь
+                try:
+                    row["gpa"] = float(row["gpa"])
+                except (TypeError, ValueError):
+                    raise ValueError(f"gpa: не удалось преобразовать {row['gpa']!r} в число") from None
+                result.append(student_from_dict(row))
+            except ValueError as e:
+                if strict:
+                    raise ValueError(f"строка №{number}: {e}") from None
+                skipped.append((number, str(e)))
+
+    if skipped:
+        print(f"Пропущено записей: {len(skipped)}")
+        for number, reason in skipped:
+            print(f"  №{number}: {reason}")
+    return result
+
+
+#ручная проверка
+
 if __name__ == "__main__":
     # 1. корректные записи туда-обратно
     students = students_from_json("data/lab08/students_input.json")
@@ -61,3 +98,9 @@ if __name__ == "__main__":
     print("\n--- skip ---")
     ok = students_from_json("data/lab08/students_bad.json", strict=False)
     print("Загружено валидных:", len(ok))
+
+    # 4. ★ чтение из CSV
+    print("\n--- CSV, skip ---")
+    ok = students_from_csv("data/lab08/students.csv", strict=False)
+    print("Загружено валидных:", len(ok))
+    print(ok)
